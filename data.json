@@ -1,0 +1,567 @@
+{
+  "activeConfigurations" : [ {
+    "name" : "PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap/",
+    "color" : "red"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles15,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=performance-optimized,SLES4SAP=sles15,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles15,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=performance-optimized,SLES4SAP=sles15,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp2,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp3,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles12sp4,label_exp=sles-sap/",
+    "color" : "blue"
+  }, {
+    "name" : "PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles15,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=libvirt,SCENARIO=cost-optimized,SLES4SAP=sles15,label_exp=sles-sap/",
+    "color" : "aborted"
+  }, {
+    "name" : "PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles15,label_exp=sles-sap",
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/PROVIDER=aws,SCENARIO=cost-optimized,SLES4SAP=sles15,label_exp=sles-sap/",
+    "color" : "blue"
+  } ],
+  "queueItem" : {
+    "buildableStartMilliseconds" : 1563360540510,
+    "url" : "queue/item/879/",
+    "params" : "",
+    "why" : "There are no nodes with the label ‘sles-sap’",
+    "stuck" : true,
+    "id" : 879,
+    "buildable" : true,
+    "task" : {
+      "_class" : "hudson.matrix.MatrixProject",
+      "name" : "sles-sap-terraform-deployments",
+      "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/"
+    },
+    "inQueueSince" : 1563360540498,
+    "_class" : "hudson.model.Queue$BuildableItem",
+    "blocked" : false,
+    "pending" : false
+  },
+  "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/",
+  "displayNameOrNull" : null,
+  "displayName" : "sles-sap-terraform-deployments",
+  "builds" : [ {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 171,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/171/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 170,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/170/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 169,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/169/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 168,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/168/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 167,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/167/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 166,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/166/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 165,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/165/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 164,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/164/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 163,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/163/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 162,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/162/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 161,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/161/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 160,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/160/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 159,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/159/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 158,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/158/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 157,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/157/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 156,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/156/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 155,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/155/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 154,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/154/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 153,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/153/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 152,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/152/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 151,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/151/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 150,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/150/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 149,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/149/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 148,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/148/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 147,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/147/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 146,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/146/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 145,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/145/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 144,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/144/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 143,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/143/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 142,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/142/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 141,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/141/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 140,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/140/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 139,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/139/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 138,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/138/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 137,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/137/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 136,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/136/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 135,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/135/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 134,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/134/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 133,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/133/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 132,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/132/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 131,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/131/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 130,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/130/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 129,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/129/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 128,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/128/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 127,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/127/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 126,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/126/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 125,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/125/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 124,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/124/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 123,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/123/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 122,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/122/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 121,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/121/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 120,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/120/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 119,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/119/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 118,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/118/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 117,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/117/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 116,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/116/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 115,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/115/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 114,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/114/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 113,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/113/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 112,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/112/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 111,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/111/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 110,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/110/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 109,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/109/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 108,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/108/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 107,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/107/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 106,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/106/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 105,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/105/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 104,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/104/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 103,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/103/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 102,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/102/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 101,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/101/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 100,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/100/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 99,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/99/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 98,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/98/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 97,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/97/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 96,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/96/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 95,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/95/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 94,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/94/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 93,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/93/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 92,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/92/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 91,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/91/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 90,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/90/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 89,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/89/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 88,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/88/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 87,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/87/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 86,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/86/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 85,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/85/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 84,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/84/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 83,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/83/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 82,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/82/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 81,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/81/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 80,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/80/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 79,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/79/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 78,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/78/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 77,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/77/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 76,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/76/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 75,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/75/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 74,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/74/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 73,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/73/"
+  }, {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 72,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/72/"
+  } ],
+  "healthReport" : [ {
+    "description" : "Build stability: 4 out of the last 5 builds failed.",
+    "iconClassName" : "icon-health-00to19",
+    "iconUrl" : "health-00to19.png",
+    "score" : 20
+  } ],
+  "fullDisplayName" : "sles-sap-terraform-deployments",
+  "scm" : {
+    "_class" : "org.jenkinsci.plugins.multiplescms.MultiSCM"
+  },
+  "firstBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 1,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/1/"
+  },
+  "fullName" : "sles-sap-terraform-deployments",
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 152,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/152/"
+  },
+  "concurrentBuild" : true,
+  "upstreamProjects" : [ ],
+  "inQueue" : true,
+  "name" : "sles-sap-terraform-deployments",
+  "nextBuildNumber" : 172,
+  "lastUnsuccessfulBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 171,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/171/"
+  },
+  "lastStableBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 152,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/152/"
+  },
+  "buildable" : true,
+  "property" : [ {
+    "_class" : "hudson.plugins.jira.JiraProjectProperty"
+  }, {
+    "_class" : "com.coravy.hudson.plugins.github.GithubProjectProperty"
+  }, {
+    "_class" : "com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty"
+  }, {
+    "_class" : "org.jenkinsci.plugins.gitlablogo.GitlabLogoProperty"
+  }, {
+    "_class" : "com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty"
+  }, {
+    "_class" : "com.sonyericsson.rebuild.RebuildSettings"
+  }, {
+    "_class" : "hudson.plugins.heavy_job.HeavyJobProperty"
+  } ],
+  "downstreamProjects" : [ ],
+  "lastFailedBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 170,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/170/"
+  },
+  "_class" : "hudson.matrix.MatrixProject",
+  "lastBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 171,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/171/"
+  },
+  "labelExpression" : "sles-sap",
+  "keepDependencies" : false,
+  "lastCompletedBuild" : {
+    "_class" : "hudson.matrix.MatrixBuild",
+    "number" : 171,
+    "url" : "https://ci.suse.de/job/sles-sap-terraform-deployments/171/"
+  },
+  "color" : "aborted",
+  "description" : "Job used to deploy a SAP HANA cluster and see if all the packages are working as expected",
+  "actions" : [ { }, { }, { }, { }, { }, { }, { }, { }, { }, { }, { }, {
+    "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+  } ],
+  "lastUnstableBuild" : null
+}
+

@@ -1,0 +1,14 @@
+{
+  :config {
+   :username "myuser" 
+   :password "pwd"
+   :jenkins-url "https://server.web.jenkins"
+  }
+
+  ;; here is the actions API
+  ;; add list of jobs to perform operation
+  :jobs {
+     :list ["sles-sap-terraform-deployments", "sles-sap-crypctl"]
+  ;; do operation with this jobs
+ }
+}
