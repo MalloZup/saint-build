@@ -1,11 +1,7 @@
-# saint-build
+![logo](doc/logo.png)
 
-# Status:
-0.0.1 Project under development.
-
-The first API will be to monitor a list of jobs and their build status, and handle the new buildstatus event in different ways with handlers.
-
-#Rationale:
+___
+# Rationale:
 
 Saint-build aims to event-driven for Jenkins API.
 
@@ -19,7 +15,7 @@ Usage
 Retrieve important infos about Jenkins Jobs and define a minimal API.
 
 
-#Constraints
+# Constraints
 
 The project doesn't aim to support the full jenkins api.
 License
