@@ -6,4 +6,5 @@
 (defn read-config []
   (clojure.edn/read-string (slurp conf-file)))
 
-(def get-config (read-config))
+(defn get-config []
+  (read-config))

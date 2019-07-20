@@ -2,15 +2,16 @@
   (:require [saint-build.config :as config]
             [clj-http.client :as client]
             [clojure.tools.logging :as log]
+            [saint-build.notifications :as notifications]
             [cheshire.core :refer :all]))
 
 
-(def jenkins-url (get-in config/get-config [:config :jenkins-url]))
-(def jobs (get-in config/get-config [:jobs :list]))
+(def jenkins-url (get-in (config/get-config) [:config :jenkins-url]))
+(def jobs (get-in (config/get-config) [:jobs :list]))
 
 (defn get-api [endpoint]
-  (let [jenkins-user (get-in config/get-config [:config :username])
-        jenkins-pwd (get-in config/get-config [:config :password])]
+  (let [jenkins-user (get-in (config/get-config) [:config :username])
+        jenkins-pwd (get-in (config/get-config) [:config :password])]
   (parse-string (:body ( client/get endpoint {:basic-auth [jenkins-user jenkins-pwd]}))true)))
 
 (defn get-job-info [job-name]
@@ -49,22 +50,34 @@
 (defn send-msg-to-chat-medium [job-data]
 "read-configuration for select the notification chat medium rocketchat/slack etc, etc.
  send data to the dispatched medium"  
-  ;; TODO read configuration, select the medium and send message
-  (println job-data))
+  (notifications/init-medium)
+  (notifications/send-chat-msg job-data))
 
 
-(defn filter-job-infos-snd-msg [job-name]
+(defn build-status-notification [job-name]
   "given a full url, retrieve json data, and filter it with interesting data for humans, send this data via chat-medium"
-  (-> (get-job-info job-name)
-    (filter-build-infos) 
-    (send-msg-to-chat-medium)))
+  ;; do pipeline only when a new build is there
+  (when (new-job-completed? (get-job-info job-name))   
+    (-> (get-job-info job-name)
+        (filter-build-infos) 
+        (send-msg-to-chat-medium))))
+  
 
 (defn -main []
-  (while true
-    (doseq [job jobs]
-      (when (new-job-completed? (get-job-info job))
-         (filter-job-infos-snd-msg job)))
-  
-  ;; do daemon things
+"main function is a daemon which from config file will execute async API action, dispatching notifications"
+  (let [buildstatus-enabled? (get-in (config/get-config) [:jobs :actions :buildstatus])]
+    (while true
+      (doseq [job jobs]
+      ;; exec this only when  :actions :jobs { :actions {:buildstatus true
+        (when buildstatus-enabled? 
+             (log/info "buildstatus API action enabled, executing buildstatus async")
+            ;; deref here only fre debug modus
+            (deref (future (build-status-notification job)))))
+
+    ;; do daemon things
   (log/info "sleeping 5 min")
-  (Thread/sleep (* 1 60 1000))))
+  (Thread/sleep (* 5 60 1000)))))
+
+
+  
+  
