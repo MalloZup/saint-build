@@ -14,40 +14,56 @@
   (parse-string (:body ( client/get endpoint {:basic-auth [jenkins-user jenkins-pwd]}))true)))
 
 (defn get-job-info [job-name]
-  "perform a http request, and return a map with significant data fro the build"
-  (let [job-endpoint (str jenkins-url "/" "job/" job-name "/api/json" )
-        data (get-api job-endpoint)]
-    (log/info (str "executing http request for URL: " job-endpoint))
-     (assoc {} :lastCompletedBuild (:lastCompletedBuild data)
-               :healtReport     (:description (first (:healthReport data))
-               :lastFailedBuild (:url (:lastFailedBuild data)) 
-               :lastStableBuild (:url (:lastStableBuild data))
-               ;; TODO checki if matrix
-               ;; if it is a matrix, it has activeConfigurations ( we are interested also to this)
-               ))))
+  "perform a http request, and return a map with all json data fro the build"
+  (let [job-endpoint (str jenkins-url "/" "job/" job-name "/api/json" )]
+        (log/info (str "executing http request for URL: " job-endpoint))
+        (try 
+            (get-api job-endpoint)
+            (catch Exception ex  (log/error (str "http caught exception during jenkins job http request: " (.getMessage ex))) {:error true} ))))
+
+(defn filter-build-infos [data]  
+  (if (:error data) (log/error "data was corrupted skipping")
+  ;; if data ok select it
+  (assoc {} :lastCompletedBuild (:url (:lastCompletedBuild data))
+       :healtReport     (:description (first (:healthReport data)))
+       :lastFailedBuild (:url (:lastFailedBuild data)) 
+       :lastStableBuild (:url (:lastStableBuild data)))))
+
+;; this atom will conserve if there is a new build, for each job
+(def build-cache (atom {}))
+
+(defn new-job-completed? [data]
+  "data is a single job data"
+  ;; check if latest completed build for the single job is already in cache
+  (if  (contains? @build-cache (:url (:lastCompletedBuild data)) )
+    (log/info (str "lastCompleted build already present, skipping" (:url (:lastCompetetBuild data))))
+
+    ;; if not in cache,store it in build-cache and return true for triggering notifications
+    ;; use url as uid, {:uid :buildnumber} 
+    ((swap! build-cache merge { (:url (:lastCompletedBuild data)) (:number (:lastCompletedBuild data))})  
+     (log/debug @build-cache) 
+      true)))
 
 
-(defn new-job-completed? []
-  (println "not yet"))
-
-;; TODO: check if build has finished. For that check the lastCompletedBuild parameter
-;; if this change we can retrive other data. 
-
-
-;; send msg with missile
-(defn send-msg-to-rocketchat [job-data]
+(defn send-msg-to-chat-medium [job-data]
+"read-configuration for select the notification chat medium rocketchat/slack etc, etc.
+ send data to the dispatched medium"  
   (println job-data))
 
 
+(defn filter-job-infos-snd-msg [job-name]
+  "given a full url, retrieve json data, and filter it with interesting data for humans, send this data via chat-medium"
+  (-> (get-job-info job-name)
+    (filter-build-infos) 
+    (send-msg-to-chat-medium ) 
+   ))
+
 (defn -main []
-  (doseq [job jobs]
-    ;; check if data has changed  wiht lastCompletedBuild
-    ;; todo save in atom the current-job, pro job check if it has change, if yes send mesg
-    (when new-job-completed?
-     
-    (let [job-info  (get-job-info job)]
-      
-      (send-msg-to-rocketchat job-info))))
+  (while true
+    (doseq [job jobs]
+      (when (new-job-completed? (get-job-info job))
+         (filter-job-infos-snd-msg job)))
   
-  (println "sleeping 5 min")
-  )
+  ;; do daemon things
+  (log/info "sleeping 5 min")
+  (Thread/sleep (* 1 60 1000))))
