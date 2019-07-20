@@ -1,14 +1,45 @@
+;; JENKINS configuration
 {
   :config {
-   :username "myuser" 
-   :password "pwd"
-   :jenkins-url "https://server.web.jenkins"
+   :username "my-jenkins-user" 
+   :password "my-jenkins-pwd"
+   :jenkins-url "https://my-jenkins-server.com/"
+ }
+
+;; here is the actions API
+  ;; add list of jobs to perform operation defined by the api
+  :jobs {
+     :list ["magic-job1", "my-good-job2"]
+     ;; by default we watch the build status of this jobs list. In future we can add other API operations.
+     :actions {
+                 :buildstatus true
+              }
+    }
+
+
+;; **  notification  medium: **
+
+;; below, a list of notifications. If you add more then 1 notification medium, the data will send to this mediums.
+
+ :notifications {
+   ;; ** SUPPORTED **
+   ;; one can specify a list of mediums where the same message will send
+   ;; configuration for rocketchat
+   :rocketchat {
+                  :username "myuser"
+                  :server-url "https://my-rocketchat-server.com"
+                  :token "my-magic-token"
+                  ;; it must be a public channel. A list of public rocketchat channels
+                  :channel-names ["clojure"]
+                  ;; this is a message prefix before the data, customize it as you wish
+                  :msg-prefix ":doge: :doge: :doge:" ;; some emoticons
+               }
+
+   ;; **  NOT SUPPORTED, yet **
+   ;;
+   ;; some possible candidates.. 
+   ;; :slack {:configuration  bla bla} 
+   ;; :mail {:configuration}
   }
 
-  ;; here is the actions API
-  ;; add list of jobs to perform operation
-  :jobs {
-     :list ["sles-sap-terraform-deployments", "sles-sap-crypctl"]
-  ;; do operation with this jobs
- }
 }
