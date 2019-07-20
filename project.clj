@@ -7,5 +7,5 @@
                  [clj-http "3.10.0"]
                  [org.clojure/tools.logging "0.4.1"]
                  [cheshire "5.8.1"]
-                 [missile "0.1.0"]]
+                 [missile "0.1.1"]]
   :repl-options {:init-ns saint-build.core})
