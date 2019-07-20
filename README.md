@@ -2,6 +2,10 @@
 
 ___
 
+- [Quickstart](#quickstart)
+- [specification](#specification)
+- [features](#features)
+
 # Quickstart:
 
 0) Edit the main configuration: 
@@ -9,13 +13,15 @@ ___
 [saintb-config.edn.example](saintb-config.edn.example)
 
 The config example is well documented with all the informations.
+For more details look at specifications, below.
+
 
 1) Startup the daemon with:
 
 `java -jar saint-build-VERSION-standalone.jar`
 
-
-# Configuration details:
+___
+# specification:
 
 Below some minimal description of `saintb-config.edn` file
 
@@ -99,4 +105,5 @@ We support currently only rocketchat, but other medium can be added easy.
 The project doesn't aim to support the full jenkins api.
 
 
+___
 Copyright © 2019 Dario Maiocchi
