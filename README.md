@@ -22,7 +22,7 @@ For more details look at specifications, below.
 
 The configuration file should be on the same dir PWD as the daemon;
 
-alternatively, you can set up the ENV variable `CONFIG_FILE_PATH` if you want to put your config file in other locations the PWD. (it should be a full-path)
+alternatively, you can set up the ENV variable `CONFIG_FILE_PATH` for config file in other locations.
 
 Start with
 
