@@ -19,7 +19,8 @@
         (log/info (str "executing http request for URL: " job-endpoint))
         (try 
             (get-api job-endpoint)
-            (catch Exception ex  (log/error (str "http caught exception during jenkins job http request: " (.getMessage ex))) {:error true} ))))
+            (catch Exception ex  (log/error (str "http caught exception during jenkins job http request: " (.getMessage ex)  " jenkins-job-endpoint: "job-endpoint )) 
+                                {:error true} ))))
 
 (defn filter-build-infos [data]  
   (if (:error data) (log/error "data was corrupted skipping")
@@ -35,8 +36,8 @@
 (defn new-job-completed? [data]
   "data is a single job data"
   ;; check if latest completed build for the single job is already in cache
-  (if  (contains? @build-cache (:url (:lastCompletedBuild data)) )
-    (log/info (str "lastCompleted build already present, skipping" (:url (:lastCompetetBuild data))))
+  (if (contains? @build-cache (:url (:lastCompletedBuild data)) )
+    (log/info (str "lastCompleted build already present, skipping" (:url (:lastCompetedBuild data))))
 
     ;; if not in cache,store it in build-cache and return true for triggering notifications
     ;; use url as uid, {:uid :buildnumber} 
@@ -48,6 +49,7 @@
 (defn send-msg-to-chat-medium [job-data]
 "read-configuration for select the notification chat medium rocketchat/slack etc, etc.
  send data to the dispatched medium"  
+  ;; TODO read configuration, select the medium and send message
   (println job-data))
 
 
@@ -55,8 +57,7 @@
   "given a full url, retrieve json data, and filter it with interesting data for humans, send this data via chat-medium"
   (-> (get-job-info job-name)
     (filter-build-infos) 
-    (send-msg-to-chat-medium ) 
-   ))
+    (send-msg-to-chat-medium)))
 
 (defn -main []
   (while true

@@ -6,7 +6,19 @@ ___
 
 0) setup config
 
-FIXME
+setup a config like the example;
+
+[saintb-config.edn.example](saintb-config.edn.example)
+
+Insert the Jenkins credential and the Jobs name you want to monitor in Jenkins
+
+Select also the medium of your choice to send the notification. You can also use a custom Prefix message
+
+
+# Features:
+
+-  Monitor the build status of a given list of jobs, and send them via a medium of choice (rocketchat, etc)
+
 
 # Rationale:
 
@@ -25,6 +37,7 @@ Retrieve important infos about Jenkins Jobs and define a minimal API.
 # Constraints
 
 The project doesn't aim to support the full jenkins api.
-License
+
+
 
 Copyright © 2019 Dario Maiocchi
