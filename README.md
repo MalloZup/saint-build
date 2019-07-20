@@ -16,9 +16,19 @@ The config example is well documented with all the informations.
 For more details look at specifications, below.
 
 
-1) Startup the daemon with:
+
+
+1) Startup the daemon:
+
+The configuration file should be on the same dir PWD as the daemon;
+
+alternatively, you can set up the ENV variable `CONFIG_FILE_PATH` if you want to put your config file in other locations the PWD. (it should be a full-path)
+
+Start with
 
 `java -jar saint-build-VERSION-standalone.jar`
+
+
 
 ___
 # specification:
