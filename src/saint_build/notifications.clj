@@ -16,21 +16,19 @@
 
 
 (defn init-medium []
-"this function is called by main, we setup communications channels by configuration"
-  (set-rocketchat))
+"this function is called by main, we setup communications channels by configuration"  (set-rocketchat))
 
 (defn send-rocketchat-msg [ch-name data rocketchat-conf]
    (log/info "sending notifications via rocketchat")
-    ;; TODO: add log and exceptions here)   
-    (-> ch-name
-       (rocket-chan/get-channel-id) 
-       (rocket-chat/sendMessage (str (:msg-prefix rocketchat-conf ) data) )))
+    ;; TODO: add log and exceptions here)  
+    (rocket-chat/sendMessage   (rocket-chan/get-channel-id ch-name) 
+       (str (:msg-prefix rocketchat-conf ) data) ))
 
  ;; todo: this can be abstracted more later, with a multimethod
 (defn send-chat-msg [data]
   (let [rocketchat-conf (get-in (config/get-config) [:notifications :rocketchat])]
     (when rocketchat-conf 
         (doseq [ch-name (:channel-names rocketchat-conf)]
-          (future send-rocketchat-msg ch-name data rocketchat-conf)))))
+          (future (send-rocketchat-msg ch-name data rocketchat-conf))))))
  
   
