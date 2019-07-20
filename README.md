@@ -1,6 +1,13 @@
 ![logo](doc/logo.png)
 
 ___
+
+# Quickstart:
+
+0) setup config
+
+FIXME
+
 # Rationale:
 
 Saint-build aims to event-driven for Jenkins API.
