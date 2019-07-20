@@ -51,7 +51,8 @@ Add your jobs in the `list` parameter
     }
 ```
 
-* actions 
+* actions:
+
 Currently we support only `buildstatus` set to true
 
 `buildstatus` true, will select for each job in the list the latestBuild failed, latest build OK, and other usefull informations;
