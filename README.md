@@ -13,7 +13,7 @@ Monitor jenkins events in async, functional, pragmatic way.
 By design, saint-build send new events **only** when needed, comparing them with old events stored in cache. 
 The cache is builded with lightweight in memory clojure atoms.
 The events handler sent notifications to medium of choices.
-
+On a short-term the roadmap contains notifications, but other types of action can be implemented.
 
 # Quickstart:
 
