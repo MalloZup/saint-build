@@ -121,8 +121,9 @@ Currenltly you can increase the timeout for sleeping of daemon. In this way , th
 ;; daemon config
 daemon-config {
       :sleep-timeout 30 ;; minutes
-      ;; customize polling timeout in minutes. the daemon will look for new events on server, sleeing 5 min by default.
-      ;; if you add this, is when you want to save RATE-LIMITING. Having 30  or 60 minutes should be considered if you WEB you consume as high rate-limiting
+      ;; customize polling timeout in minutes. the daemon will look for new events on server, sleeping 5 min by default.
+      ;; if you add more minutes, normally is when you want to save RATE-LIMITING. Having 30  or 60 minutes should be considered if you WEB you consume as high rate-limiting
+      ;; polling some webservice has some constraints with rate-limiting (depending on resources).
 }
 ```
 
