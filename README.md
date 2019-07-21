@@ -5,6 +5,15 @@ ___
 - [Quickstart](#quickstart)
 - [specification](#specification)
 - [features](#features)
+- [architecture](#architecture)
+
+# Rationale:
+
+Monitor jenkins events in async, functional, pragmatic way.
+By design, saint-build send new events **only** when needed, comparing them with old events stored in cache. 
+The cache is builded with lightweight in memory clojure atoms.
+The events handler sent notifications to medium of choices.
+
 
 # Quickstart:
 
@@ -16,8 +25,6 @@ The config example is well documented with all the informations.
 For more details look at specifications, below.
 
 
-
-
 1) Startup the daemon:
 
 The configuration file should be on the same dir PWD as the daemon;
@@ -27,8 +34,6 @@ alternatively, you can set up the ENV variable `CONFIG_FILE_PATH` for config fil
 Start with
 
 `java -jar saint-build-VERSION-standalone.jar`
-
-
 
 ___
 # specification:
@@ -109,7 +114,13 @@ We support currently only rocketchat, but other medium can be added easy.
 # Features:
 
 -  Monitor the build status of a given list of jobs, and send them via a medium or multiples of choice
+  
 
+# Architectures:
+
+saint-build is composable and driven by the API.edn file.
+It uses atoms for storing the states, and it build a cache for don't sending same event, but it trigger only new events when needed.
+It is composable by design.
 
 # Constraints
 
