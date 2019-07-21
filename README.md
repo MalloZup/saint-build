@@ -111,12 +111,28 @@ We support currently only rocketchat, but other medium can be added easy.
 ```
 
 
+#### Optional specifications:
+
+You can modify the daemon configuration.
+
+Currenltly you can increase the timeout for sleeping of daemon. In this way , the daemon doesn't consume API calls for X minutes 
+
+```
+;; daemon config
+daemon-config {
+      :sleep-timeout 30 ;; minutes
+      ;; customize polling timeout in minutes. the daemon will look for new events on server, sleeing 5 min by default.
+      ;; if you add this, is when you want to save RATE-LIMITING. Having 30  or 60 minutes should be considered if you WEB you consume as high rate-limiting
+}
+```
+
+
 # Features:
 
 -  Monitor the build status of a given list of jobs, and send them via a medium or multiples of choice
-  
+-  Configure daemon (timeout)
 
-# Architectures:
+# Architecture:
 
 saint-build is composable and driven by the API.edn file.
 It uses atoms for storing the states, and it build a cache for don't sending same event, but it trigger only new events when needed.
@@ -124,8 +140,9 @@ It is composable by design.
 
 # Constraints
 
-The project doesn't aim to support the full jenkins api.
+- The project doesn't aim to support the full jenkins api.
 
+- For moment all jobs events will sent to only 1 channel (rocketchat api). You will need to create 2 or more daemons with diff configuration pro team. ( this is also more isolated)
 
 ___
 Copyright © 2019 Dario Maiocchi

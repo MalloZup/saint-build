@@ -5,7 +5,6 @@
    :password "my-jenkins-pwd"
    :jenkins-url "https://my-jenkins-server.com/"
  }
-
 ;; here is the actions API
   ;; add list of jobs to perform operation defined by the api
   :jobs {
@@ -15,6 +14,15 @@
                  :buildstatus true
               }
     }
+
+;; general api for the daemon of saint-build
+  daemon-config {
+      :sleep-timeout 30 ;; minutes
+      ;; customize polling timeout in minutes. the daemon will look for new events on server, sleeing 5 min by default.
+      ;; if you add this, is when you want to save RATE-LIMITING. Having 30  or 60 minutes should be considered if you WEB you consume as high rate-limiting
+}
+
+
 
 
 ;; **  notification  medium: **

@@ -65,8 +65,11 @@
 
 (defn -main []
 "main function is a daemon which from config file will execute async API action, dispatching notifications"
-  (let [buildstatus-enabled? (get-in (config/get-config) [:jobs :actions :buildstatus])]
+  (let [buildstatus-enabled? (get-in (config/get-config) [:jobs :actions :buildstatus])
+        DEFAULT_TIMEOUT_SLEEP 5
+        sleep-timeout (or (get-in (config/get-config) [:daemon-config :sleep-timeout]) DEFAULT_TIMEOUT_SLEEP)]
     (while true
+      (log/info (str "checking for new events ..."))
       (doseq [job jobs]
       ;; exec this only when  :actions :jobs { :actions {:buildstatus true
         (when buildstatus-enabled? 
@@ -75,9 +78,5 @@
             (deref (future (build-status-notification job)))))
 
     ;; do daemon things
-  (log/info "sleeping 5 min")
-  (Thread/sleep (* 5 60 1000)))))
-
-
-  
-  
+  (log/info (str "sleeping for " sleep-timeout " minutes"))
+  (Thread/sleep (* sleep-timeout 60 1000)))))
