@@ -20,9 +20,10 @@
 
 (defn send-rocketchat-msg [ch-name data rocketchat-conf]
    (log/info "sending notifications via rocketchat")
-    ;; TODO: add log and exceptions here)  
-    (rocket-chat/sendMessage   (rocket-chan/get-channel-id ch-name) 
-       (str (:msg-prefix rocketchat-conf ) data) ))
+    (try 
+       (rocket-chat/sendMessage (rocket-chan/get-channel-id ch-name) 
+                                (str (:msg-prefix rocketchat-conf ) data) )
+     (catch java.net.MalformedURLException ex (log/error (str "could not send data to rocketchat channel. Probably the configuration of the rocketchatserver is wrong: " (.getMessage ex))))))
 
  ;; todo: this can be abstracted more later, with a multimethod
 (defn send-chat-msg [data]
