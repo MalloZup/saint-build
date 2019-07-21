@@ -127,7 +127,6 @@ daemon-config {
 }
 ```
 
-
 # Features:
 
 -  Monitor the build status of a given list of jobs, and send them via a medium or multiples of choice
