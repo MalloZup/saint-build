@@ -28,7 +28,7 @@
   (if (:error data) (log/error "data was corrupted skipping")
   ;; if data ok select it
   (assoc {} :lastCompletedBuild (:url (:lastCompletedBuild data))
-       :healtReport     (:description (first (:healthReport data)))
+       :healthReport    (:description (first (:healthReport data)))
        :lastFailedBuild (:url (:lastFailedBuild data)) 
        :lastStableBuild (:url (:lastStableBuild data)))))
 
