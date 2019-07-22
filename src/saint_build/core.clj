@@ -3,7 +3,8 @@
             [clj-http.client :as client]
             [clojure.tools.logging :as log]
             [saint-build.notifications :as notifications]
-            [cheshire.core :refer :all]))
+            [cheshire.core :refer :all])
+  (:gen-class))
 
 
 (def jenkins-url (get-in (config/get-config) [:config :jenkins-url]))
