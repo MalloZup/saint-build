@@ -75,7 +75,7 @@ Currently we support only `buildstatus` set to true
 It returns a map like this
 
 ```
-{:lastCompletedBuild "https://jenkins.com/job/my-job-magic/175/", :healtReport "Build stability: All recent builds failed.", :lastFailedBuild "https://ci.jenkins.com/job/my-job-magic/175/", :lastStableBuild "https://ci.jenkins.com/job/my-job-magic/152/"} 
+{:lastCompletedBuild "https://jenkins.com/job/my-job-magic/175/", :healthReport "Build stability: All recent builds failed.", :lastFailedBuild "https://ci.jenkins.com/job/my-job-magic/175/", :lastStableBuild "https://ci.jenkins.com/job/my-job-magic/152/"}
 ```
 
 This map/data will then sent via notificationschannel
