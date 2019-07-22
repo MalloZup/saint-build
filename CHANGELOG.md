@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.1.2 Released:
+
+- add insecure? true for avoid error due to untrusted ssl cert
+
 # 0.1.1 Released:
 
 - add optional option for sleeping more the 5 minutes;

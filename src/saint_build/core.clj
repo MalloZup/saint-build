@@ -13,7 +13,7 @@
 (defn get-api [endpoint]
   (let [jenkins-user (get-in (config/get-config) [:config :username])
         jenkins-pwd (get-in (config/get-config) [:config :password])]
-  (parse-string (:body ( client/get endpoint {:basic-auth [jenkins-user jenkins-pwd]}))true)))
+  (parse-string (:body ( client/get endpoint { :insecure? true :basic-auth [jenkins-user jenkins-pwd]}))true)))
 
 (defn get-job-info [job-name]
   "perform a http request, and return a map with all json data fro the build"

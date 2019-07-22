@@ -1,4 +1,4 @@
-(defproject saint-build "0.1.1"
+(defproject saint-build "0.1.2"
   :description "saint-build monitor you jenkins with async and elegance"
   :url "https://github.com/MalloZup/saint-build"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
