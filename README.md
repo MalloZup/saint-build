@@ -26,9 +26,6 @@ See [specification](doc/specification.md) for more details.
 
 1) Startup the daemon:
 
-
-Start with
-
 `java -jar saint-build-VERSION-standalone.jar`
 
 The configuration file should be on the same dir PWD as the daemon;
