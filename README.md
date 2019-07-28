@@ -22,18 +22,18 @@ On a short-term the roadmap contains notifications, but other types of action ca
 
 [saintb-config.edn.example](saintb-config.edn.example)
 
-The config example is well documented with all the informations.
-For more details look at specifications, below.
+See [specification](doc/specification.md) for more details.
 
 1) Startup the daemon:
 
-The configuration file should be on the same dir PWD as the daemon;
-
-alternatively, you can set up the ENV variable `CONFIG_FILE_PATH` for config file in other locations.
 
 Start with
 
 `java -jar saint-build-VERSION-standalone.jar`
+
+The configuration file should be on the same dir PWD as the daemon;
+
+* the ENV variable `CONFIG_FILE_PATH` setup  config file from other locations.
 
 # Features:
 
