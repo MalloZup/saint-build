@@ -11,16 +11,13 @@ ___
 # Rationale:
 
 Monitor jenkins events in async, functional, pragmatic way.
-By design, saint-build send new events **only** when needed, comparing them with old events stored in cache. 
-The cache is builded with lightweight in memory clojure atoms.
+Sait-build send new events **only** when useful, with a smart cache mechanism.
 The events handler sent notifications to medium of choices.
 On a short-term the roadmap contains notifications, but other types of action can be implemented.
 
 # Quickstart:
 
-0) Edit the main configuration: 
-
-[saintb-config.edn.example](saintb-config.edn.example)
+0) Edit the main configuration: [saintb-config.edn.example](saintb-config.edn.example)
 
 See [specification](doc/specification.md) for more details.
 
@@ -28,9 +25,8 @@ See [specification](doc/specification.md) for more details.
 
 `java -jar saint-build-VERSION-standalone.jar`
 
-The configuration file should be on the same dir PWD as the daemon;
-
-* the ENV variable `CONFIG_FILE_PATH` setup  config file from other locations.
+* The configuration file should be on the same dir PWD as the daemon;
+  the ENV variable `CONFIG_FILE_PATH` setup  config file from other locations.
 
 # Features:
 
