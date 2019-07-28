@@ -6,6 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [clj-http "3.10.0"]
                  [org.clojure/tools.logging "0.4.1"]
+                 [aleph "0.4.6"]
+                 [manifold "0.1.8"]
                  [cheshire "5.8.1"]
                  [missile "0.1.1"]]
   :main saint-build.core
