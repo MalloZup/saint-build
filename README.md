@@ -3,7 +3,7 @@
 ___
 
 - [Quickstart](#quickstart)
-- [specification](#doc/specification.md)
+- [specification](doc/specification.md)
 - [features](#features)
 - [architecture](#architecture)
 - [who is using saint-build](#who-is-using-saint-build)
