@@ -6,7 +6,7 @@ ___
 - [specification](#specification)
 - [features](#features)
 - [architecture](#architecture)
-
+- [who is using saint-build](#who-is-using-saint-build)
 # Rationale:
 
 Monitor jenkins events in async, functional, pragmatic way.
@@ -137,6 +137,10 @@ daemon-config {
 saint-build is composable and driven by the API.edn file.
 It uses atoms for storing the states, and it build a cache for don't sending same event, but it trigger only new events when needed.
 It is composable by design.
+
+# Who is using saint-build
+
+We are using saint-build dayly at [SUSE](https://github.com/SUSE) 
 
 # Constraints
 
